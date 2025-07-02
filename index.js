@@ -21,14 +21,25 @@ ilIlceVeri.forEach(item => {
   districts[item.il] = item.ilceleri;
 });
 
-const categories = ['Hastaneler', 'Okullar', 'AVM', 'Liseler'];
+const categories = [
+  'Hastaneler',
+  'Okullar',
+  'AVM',
+  'Restoranlar',
+  'Camiler',
+  'Benzin İstasyonları',
+  'Oteller'
+];
 
-// Geoapify kategori eşlemesi
+
 const geoapifyCategoryMap = {
   'Hastaneler': 'healthcare.hospital',
   'Okullar': 'education.school',
   'AVM': 'commercial.shopping_mall',
-  'Liseler': 'education.secondary',
+  'Restoranlar': 'catering.restaurant',
+  'Camiler': 'religion.place_of_worship',
+  'Benzin İstasyonları': 'service.station',
+  'Oteller': 'accommodation.hotel',
 };
 
 // İlçe için koordinat al
