@@ -3,7 +3,7 @@ const fs = require('fs');
 const TelegramBot = require('node-telegram-bot-api');
 const axios = require('axios');
 
-const BOT_TOKEN = process.env.BOT_TOKEN; 
+const BOT_TOKEN = process.env.BOT_TOKEN;
 const GEOAPIFY_KEY = process.env.GEOAPIFY_KEY;
 
 const bot = new TelegramBot(BOT_TOKEN, { polling: true });
@@ -21,6 +21,7 @@ ilIlceVeri.forEach(item => {
   districts[item.il] = item.ilceleri;
 });
 
+// Kategoriler
 const categories = [
   'Hastaneler',
   'Okullar',
@@ -31,7 +32,7 @@ const categories = [
   'Oteller'
 ];
 
-
+// Geoapify kategori eşlemesi
 const geoapifyCategoryMap = {
   'Hastaneler': 'healthcare.hospital',
   'Okullar': 'education.school',
@@ -41,6 +42,20 @@ const geoapifyCategoryMap = {
   'Benzin İstasyonları': 'service.station',
   'Oteller': 'accommodation.hotel',
 };
+
+// Emoji eşlemesi
+function getCategoryEmoji(kategori) {
+  switch (kategori) {
+    case 'Hastaneler': return '🏥';
+    case 'Okullar': return '🏫';
+    case 'AVM': return '🛍️';
+    case 'Restoranlar': return '🍽️';
+    case 'Camiler': return '🕌';
+    case 'Benzin İstasyonları': return '⛽';
+    case 'Oteller': return '🏨';
+    default: return '📍';
+  }
+}
 
 // İlçe için koordinat al
 async function getCoords(il, ilce) {
@@ -149,7 +164,7 @@ bot.on('message', async (msg) => {
       const response = await axios.get(`https://api.geoapify.com/v2/places`, {
         params: {
           categories: geoCategory,
-          filter: `circle:${coords.lng},${coords.lat},5000`, // 5 km yarıçap
+          filter: `circle:${coords.lng},${coords.lat},5000`,
           bias: `proximity:${coords.lng},${coords.lat}`,
           limit: 50,
           apiKey: GEOAPIFY_KEY,
@@ -163,37 +178,19 @@ bot.on('message', async (msg) => {
         return;
       }
 
-      // Kategoriye göre emoji döndüren fonksiyon
-function getCategoryEmoji(kategori) {
-    switch (kategori) {
-      case 'Hastaneler':
-        return '🏥';
-      case 'Okullar':
-        return '🏫';
-      case 'AVM':
-        return '🛍️';
-      case 'Liseler':
-        return '🎓';
-      default:
-        return '📍';
-    }
-  }
-  
-  // Bot yanıtı gönderirken kullan:
-  for (const place of places) {
-    const name = place.properties.name || 'Adı yok';
-    const lat = place.geometry.coordinates[1];
-    const lng = place.geometry.coordinates[0];
-    const emoji = getCategoryEmoji(current.kategori);
-  
-    const mapsUrl = `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lng}#map=16/${lat}/${lng}`;
-  
-    await bot.sendMessage(chatId, `${emoji} *${name}*\n📍 [Haritada Aç](${mapsUrl})`, {
-      parse_mode: 'Markdown',
-      disable_web_page_preview: true,
-    });
-  }
-  
+      for (const place of places) {
+        const name = place.properties.name || 'Adı yok';
+        const lat = place.geometry.coordinates[1];
+        const lng = place.geometry.coordinates[0];
+        const emoji = getCategoryEmoji(current.kategori);
+
+        const mapsUrl = `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lng}#map=16/${lat}/${lng}`;
+
+        await bot.sendMessage(chatId, `${emoji} *${name}*\n📍 [Haritada Aç](${mapsUrl})`, {
+          parse_mode: 'Markdown',
+          disable_web_page_preview: true,
+        });
+      }
 
       await bot.sendMessage(chatId, `✅ *${places.length} sonuç listelendi.*`, {
         parse_mode: 'Markdown'
