@@ -177,24 +177,44 @@ bot.on('message', async (msg) => {
         bot.sendMessage(chatId, "😔 Hiç sonuç bulunamadı.");
         return;
       }
-
+      
+      let mesaj = '';
+      
       for (const place of places) {
         const name = place.properties.name || 'Adı yok';
         const lat = place.geometry.coordinates[1];
         const lng = place.geometry.coordinates[0];
         const emoji = getCategoryEmoji(current.kategori);
-
+      
         const mapsUrl = `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lng}#map=16/${lat}/${lng}`;
-
-        await bot.sendMessage(chatId, `${emoji} *${name}*\n📍 [Haritada Aç](${mapsUrl})`, {
-          parse_mode: 'Markdown',
-          disable_web_page_preview: true,
-        });
+      
+        mesaj += `${emoji} *${name}*\n📍 [Haritada Aç](${mapsUrl})\n\n`;
       }
-
-      await bot.sendMessage(chatId, `✅ *${places.length} sonuç listelendi.*`, {
-        parse_mode: 'Markdown'
+      
+      // Uzun mesaj sorun olabilir, istersen 5-10 taneyle sınırla:
+      const MAX_RESULTS = 10;
+      const limitedPlaces = places.slice(0, MAX_RESULTS);
+      let limitedMessage = '';
+      for (const place of limitedPlaces) {
+        const name = place.properties.name || 'Adı yok';
+        const lat = place.geometry.coordinates[1];
+        const lng = place.geometry.coordinates[0];
+        const emoji = getCategoryEmoji(current.kategori);
+      
+        const mapsUrl = `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lng}#map=16/${lat}/${lng}`;
+      
+        limitedMessage += `${emoji} *${name}*\n📍 [Haritada Aç](${mapsUrl})\n\n`;
+      }
+      
+      await bot.sendMessage(chatId, limitedMessage, {
+        parse_mode: 'Markdown',
+        disable_web_page_preview: true,
       });
+      
+      await bot.sendMessage(chatId, `✅ *${limitedPlaces.length} sonuç listelendi.*`, {
+        parse_mode: 'Markdown',
+      });
+      
 
     } catch (err) {
       console.error("Geoapify API hatası:", err.message);
