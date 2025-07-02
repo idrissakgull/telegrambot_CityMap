@@ -1,0 +1,270 @@
+[
+    {
+      "il": "Adana",
+      "ilceleri": [
+        "Aladağ",
+        "Ceyhan",
+        "Çukurova",
+        "Feke",
+        "İmamoğlu",
+        "Karaisalı",
+        "Karataş",
+        "Kozan",
+        "Pozantı",
+        "Saimbeyli",
+        "Sarıçam",
+        "Seyhan",
+        "Tufanbeyli",
+        "Yumurtalık",
+        "Yüreğir"
+      ]
+    },
+    {
+      "il": "Adıyaman",
+      "ilceleri": [
+        "Besni",
+        "Çelikhan",
+        "Gerger",
+        "Gölbaşı",
+        "Kahta",
+        "Samsat",
+        "Sincik",
+        "Tut"
+      ]
+    },
+    {
+      "il": "Afyonkarahisar",
+      "ilceleri": [
+        "Başmakçı",
+        "Bayat",
+        "Bolvadin",
+        "Çay",
+        "Çobanlar",
+        "Dazkırı",
+        "Dinar",
+        "Emirdağ",
+        "Evciler",
+        "Hocalar",
+        "İhsaniye",
+        "İscehisar",
+        "Kızılören",
+        "Sandıklı",
+        "Sinanpaşa",
+        "Sultandağı",
+        "Şuhut"
+      ]
+    },
+    {
+      "il": "Ağrı",
+      "ilceleri": [
+        "Diyadin",
+        "Doğubayazıt",
+        "Eleşkirt",
+        "Hamur",
+        "Patnos",
+        "Taşlıçay",
+        "Tutak"
+      ]
+    },
+    {
+      "il": "Amasya",
+      "ilceleri": [
+        "Göynücek",
+        "Gümüşhacıköy",
+        "Hamamözü",
+        "Merzifon",
+        "Suluova",
+        "Taşova"
+      ]
+    },
+    {
+      "il": "Ankara",
+      "ilceleri": [
+        "Altındağ",
+        "Ayaş",
+        "Bala",
+        "Beypazarı",
+        "Çamlıdere",
+        "Çankaya",
+        "Çubuk",
+        "Elmadağ",
+        "Etimesgut",
+        "Evren",
+        "Gölbaşı",
+        "Haymana",
+        "Kahramankazan",
+        "Kalecik",
+        "Kızılcahamam",
+        "Mamak",
+        "Nallıhan",
+        "Polatlı",
+        "Pursaklar",
+        "Sincan",
+        "Şereflikoçhisar",
+        "Yenimahalle"
+      ]
+    },
+    {
+      "il": "Antalya",
+      "ilceleri": [
+        "Akseki",
+        "Aksu",
+        "Alanya",
+        "Demre",
+        "Döşemealtı",
+        "Elmalı",
+        "Finike",
+        "Gazipaşa",
+        "Gündoğmuş",
+        "İbradı",
+        "Kale",
+        "Kemer",
+        "Kepez",
+        "Konyaaltı",
+        "Korkuteli",
+        "Kumluca",
+        "Manavgat",
+        "Muratpaşa",
+        "Serik"
+      ]
+    },
+    {
+      "il": "Ardahan",
+      "ilceleri": [
+        "Çıldır",
+        "Damalkaya",
+        "Göle",
+        "Hanak",
+        "Posof"
+      ]
+    },
+    {
+      "il": "Artvin",
+      "ilceleri": [
+        "Ardanuç",
+        "Arhavi",
+        "Borçka",
+        "Hopa",
+        "Murgul",
+        "Şavşat",
+        "Yusufeli"
+      ]
+    },
+    {
+      "il": "Aydın",
+      "ilceleri": [
+        "Bozdoğan",
+        " Buharkent",
+        "Çine",
+        "Didim",
+        "Efeler",
+        "Germencik",
+        "İncirliova",
+        "Karpuzlu",
+        "Köşk",
+        "Kuşadası",
+        "Nazilli",
+        "Söke",
+        "Sultanhisar",
+        "Yenipazar"
+      ]
+    },
+    {
+      "il": "Balıkesir",
+      "ilceleri": [
+        "Altıeylül",
+        "Ayvalık",
+        "Balya",
+        "Bandırma",
+        "Bigadiç",
+        "Burhaniye",
+        "Dursunbey",
+        "Edremit",
+        "Erdek",
+        "Gömeç",
+        "Havran",
+        "İvrindi",
+        "Karesi",
+        "Kepsut",
+        "Manyas",
+        "Marmara",
+        "Savaştepe",
+        "Sındırgı",
+        "Susurluk"
+      ]
+    },
+    {
+      "il": "Bartın",
+      "ilceleri": [
+        "Amasra",
+        "Kurucaşile",
+        "Ulus"
+      ]
+    },
+    {
+      "il": "Batman",
+      "ilceleri": [
+        "Beşiri",
+        "Gercüş",
+        "Hasankeyf",
+        "Kozluk",
+        "Sason"
+      ]
+    },
+    {
+      "il": "Bayburt",
+      "ilceleri": [
+        "Aydıntepe",
+        "Demirözü"
+      ]
+    },
+    {
+      "il": "Bilecik",
+      "ilceleri": [
+        "Bozüyük",
+        "Gölpazarı",
+        "İnhisar",
+        "Osmaneli",
+        "Pazaryeri",
+        "Söğüt",
+        "Yenipazar"
+      ]
+    },
+    {
+      "il": "Bingöl",
+      "ilceleri": [
+        "Adaklı",
+        "Genç",
+        "Karlıova",
+        "Kiğı",
+        "Solhan",
+        "Yayladere",
+        "Yedisu"
+      ]
+    },
+    {
+      "il": "Bitlis",
+      "ilceleri": [
+        "Adilcevaz",
+        "Ahlat",
+        "Güroymak",
+        "Hizan",
+        "Mutki",
+        "Tatvan"
+      ]
+    },
+    {
+      "il": "Bolu",
+      "ilceleri": [
+        "Dörtdivan",
+        "Gerede",
+        "Göynük",
+        "Kıbrıscık",
+        "Mengen",
+        "Mudurnu",
+        "Seben",
+        "Yeniçağa"
+      ]
+    }
+  ]
+  
