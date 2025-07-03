@@ -203,3 +203,11 @@ bot.on('message', async (msg) => {
     return;
   }
 });
+
+
+// Railway'in botu kapatmaması için basit bir HTTP sunucusu:
+const http = require('http');
+http.createServer((req, res) => {
+  res.write('Bot is running');
+  res.end();
+}).listen(process.env.PORT || 3000);
