@@ -32,16 +32,16 @@ const categories = [
   'Oteller'
 ];
 
-// Geoapify kategori eşlemesi
 const geoapifyCategoryMap = {
   'Hastaneler': 'healthcare.hospital',
   'Okullar': 'education.school',
   'AVM': 'commercial.shopping_mall',
   'Restoranlar': 'catering.restaurant',
   'Camiler': 'religion.place_of_worship',
-  'Benzin İstasyonları': 'service.station',
+  'Benzin İstasyonları': 'service.vehicle.fuel', // düzeltildi
   'Oteller': 'accommodation.hotel',
 };
+
 
 // Emoji eşlemesi
 function getCategoryEmoji(kategori) {
